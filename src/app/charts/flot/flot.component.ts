@@ -1,6 +1,6 @@
 import { OnDestroy, Component,  OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from "rxjs";
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'app-flot',
