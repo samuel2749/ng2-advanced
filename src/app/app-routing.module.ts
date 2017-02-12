@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: LayoutComponent },
+  { path: '', redirectTo:"layout", pathMatch:"prefix" },
+  { path: 'layout', component: LayoutComponent },
   { path: 'page2', component: Page2Component },
 ];
 
