@@ -43,8 +43,10 @@
                         <p class="mb-sm">Cras rutrum scelerisque auctor. Donec ultricies blandit venenatis. Nulla facilisi. Praesent diam diam, venenatis lorem par.</p>
                       </div>
                       <div class="card-footer">
-                        <button type="button" class="btn btn-flat btn-default">Action 1</button>
-                        <button type="button" class="btn btn-flat btn-default">Action 2</button>
+                        <button [routerLink]="['/cards', 100, {name:'Martix'}]"
+                          type="button" class="btn btn-flat btn-default">Martix</button>
+                        <button [routerLink]="['/cards', 100]" [queryParams]="{name:'QueryString'}"
+                          type="button" class="btn btn-flat btn-default">QueryString</button>
                       </div>
                     </div>
                   </div>
