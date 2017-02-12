@@ -2,7 +2,7 @@
   {{title}}
 </h1>
 <ul>
-  <li><a [routerLink]="['/home']" [routerLinkActive]="'active'">Home</a></li>
+  <li><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
   <li><a routerLink="/page2" routerLinkActive="active">Page2</a></li>
 </ul>
 <hr>
