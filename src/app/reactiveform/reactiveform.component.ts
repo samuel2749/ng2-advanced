@@ -1,5 +1,6 @@
-import {FormArray,  Validators,   FormBuilder,    FormGroup} from '@angular/forms';
+import { AbstractControl,  FormArray,    Validators,     FormBuilder,      FormGroup} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import {NoWillValidator} from '../shared/no-will-validator';
 
 @Component({
   selector: 'app-reactiveform',
@@ -26,11 +27,12 @@ export class ReactiveformComponent implements OnInit {
   ngOnInit() {
     this.form.addControl("email", this.fb.control("default@example.com", Validators.required));
     let group1: FormArray = <FormArray>this.form.controls['group1'];
-    group1.insert(group1.length, this.fb.control('Will5'));
+    group1.insert(group1.length, this.fb.control('Will 5', NoWillValidator));
   }
 
-  getFieldInvalid(fieldName){
-    return this.form.controls[fieldName].invalid;
+  getFieldInvalid(fieldName, prefix=""){
+    //return this.form.controls[fieldName].invalid;
+    return this.form.get(prefix+fieldName).invalid;
   }
 
 }
